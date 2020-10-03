@@ -6,7 +6,6 @@
              placeholder="Хочу найти..."
              v-model="inputValue"
              @input="setInputValue"
-             @keyup="ligthText"
              @blur="searchLiveHidden"/>
       <div class="c-input-box__button">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,8 +20,7 @@
         <li class="list-search__item"
             v-for="(item, index) in listSearchLive"
             :key="index"
-            @click="selectItem(item)"
-            >{{ item.title }}</li>
+            @click="selectItem(item)">{{ item.title }}</li>
       </ul>
     </div>
     
@@ -39,37 +37,18 @@ export default {
     return {
       inputValue: '',
       isSearchLive: false,
-      defaultDomList: '',
     }
   },
-  beforeUpdate() {
-    // console.log('Before');
-    // console.log(this.listSearchLive);
-  },
-  updated() {
-    // console.log('Update');
-    // console.log(document.querySelector('.c-input__list').innerHTML);
-    this.defaultDomList = document.querySelector('.c-input__list');
-  },
-  mounted() {
-    // console.log('Mount');
-  },
   computed: {
-    listSearchLive:{ 
-      get() {
-        if (this.inputValue == '') return [];
+    listSearchLive() {
+      if (this.inputValue == '') return [];
         let filterList = [];
         let vm = this;
         filterList = this.inListSearch.filter(function (item) {
           return item.title.toLowerCase().indexOf(vm.inputValue.toLowerCase()) !== -1
         });
         return (filterList.length != 0) ? filterList : filterList = [{title: 'Ничего не найдено'}];
-      },
-      set(empty) {
-        return [];
-      }
     },
-    listItem() { return this.inListSearch; }
   },
   methods: {
     setInputValue() {
@@ -78,15 +57,6 @@ export default {
         return;
       }
       this.isSearchLive = true;
-      setTimeout(() => { this.ligthText }, 500);
-    },
-    ligthText() {
-      let regString = new RegExp("(?![^&;]+;)(?!<[^<>]*)("+this.inputValue+")(?![^<>]*>)(?![^&;]+;)",'gi');
-      let searchListDom = this.defaultDomList;
-      // setTimeout(() => {
-        // console.log(searchListDom.innerHTML.replace(regString, `<span style="background-color: red">${this.inputValue}</span>`));
-        searchListDom.innerHTML = searchListDom.innerHTML.replace(regString, `<span style="background-color: red">${this.inputValue}</span>`);
-      // }, 500);
     },
     selectItem(item) {
       this.inputValue = item.title;

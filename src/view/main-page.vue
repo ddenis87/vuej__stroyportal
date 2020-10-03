@@ -25,7 +25,6 @@ export default {
 
 <style lang="scss">
 $maxWidth: 1280px;
-
 $heightHead: 32px;
 $heightNavigation: 76px;
 
@@ -54,7 +53,7 @@ $heightNavigation: 76px;
     align-items: center;
     box-sizing: border-box;
   }
-  &__content { grid-area: main-page__content; border: 1px solid red; min-height: 600px;}
+  &__content { grid-area: main-page__content; min-height: 600px;}
 }
 
 </style>

@@ -36,21 +36,20 @@ export default {
         {title: 'Профиль 6'},
         {title: 'Профиль 7'},
         {title: 'Гвоздь 3'},
-        {title: 'Гвоздь 3'},
-        {title: 'Гвоздь 3'},
-        {title: 'Труба 3'},
+        {title: 'Гвоздь 43'},
+        {title: 'Гвоздь 37'},
+        {title: 'Труба 7'},
         {title: 'Гвоздодер 3'},
-        {title: 'Гвоздодер 3'},
+        {title: 'Гвоздодер 6'},
         {title: 'Трубопровод 3'},
-        {title: 'Трубопровод 3'},
-        {title: 'Трубопровод 3'},
+        {title: 'Трубопровод 8'},
+        {title: 'Трубопровод 6'},
         {title: 'Труба прямая 4'},
         {title: 'Труба косая 4'},
         {title: 'Труба кривая 4'},
         {title: 'Труба гнутая 4'},
         {title: 'Труба загнутая 4'},
         {title: 'Загнутый гвоздь 4'},
-        
       ],
     }
   },
@@ -75,7 +74,6 @@ export default {
   margin-right: auto;
   align-items: center;
   box-sizing: border-box;
-  // border: 1px solid green;
 
   &__logo { grid-area: navigation__logo; max-width: 221px; height: 48px; margin-right: 12px;}
   &__control-catalog { grid-area: navigation__control-catalog; max-width: 116px; margin: 0px 12px;}
