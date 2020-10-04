@@ -56,4 +56,10 @@ $heightNavigation: 76px;
   &__content { grid-area: main-page__content; min-height: 600px;}
 }
 
+@media screen and (max-width: 1024px) {
+  .main-page {
+    grid-template-rows: $heightHead auto auto;
+  }
+}
+
 </style>

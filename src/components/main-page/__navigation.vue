@@ -81,4 +81,19 @@ export default {
   &__control-list { grid-area: navigation__control-list; max-width: 116px; margin: 0px 12px;}
   &__control-profile { grid-area: navigation__control-profile; margin-left: 12px}
 }
+
+@media screen and (max-width: 1024px) {
+  .navigation {
+    display: grid;
+    grid-template-areas: "navigation__control-catalog navigation__logo navigation__control-profile"
+                         "navigation__search navigation__search navigation__control-list";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr auto;
+    width: 100%;
+    &__control-catalog { margin-left: 0px; margin-top: 10px; }
+    &__search { margin-left: 0px; margin-top: 10px; }
+    &__control-list { margin-right: 0px; margin-top: 10px; }
+    &__control-profile { margin-top: 10px; margin-right: 0px; }
+  }
+}
 </style>
