@@ -6,19 +6,23 @@
     <div class="main-page__navigation">
       <main-page-navigation></main-page-navigation>
     </div>
-    <div class="main-page__content"></div>
+    <div class="main-page__content">
+      <main-page-content></main-page-content>
+    </div>
   </div>
 </template>
 
 <script>
 import mainPageHead from '@/components/main-page/__head';
 import mainPageNavigation from '@/components/main-page/__navigation';
+import mainPageContent from '@/components/main-page/__content';
 
 export default {
   name: 'mainPage',
   components: {
     mainPageHead,
     mainPageNavigation,
+    mainPageContent,
   }
 }
 </script>
